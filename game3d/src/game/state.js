@@ -3,17 +3,17 @@
 export const SEASONS = ["Весна", "Лето", "Осень", "Зима"];
 
 export const CROPS = {
-  radish:    { name: "Редис",      seasons: [0],    days: 1, seed: 10, sell: 16, yield: 2 },
-  carrot:    { name: "Морковь",    seasons: [0, 1], days: 2, seed: 14, sell: 24, yield: 2 },
-  potato:    { name: "Картофель",  seasons: [0, 2], days: 3, seed: 20, sell: 34, yield: 3 },
-  wheat:     { name: "Пшеница",    seasons: [1, 2], days: 3, seed: 24, sell: 18, yield: 3 },
-  sunflower: { name: "Подсолнух",  seasons: [1],    days: 3, seed: 30, sell: 52, yield: 1 },
-  pumpkin:   { name: "Тыква",      seasons: [2],    days: 4, seed: 40, sell: 85, yield: 1 },
+  radish:    { name: "Редис",      seasons: [0],    hours: 5,  seed: 10, sell: 25, yield: 2 },
+  carrot:    { name: "Морковь",    seasons: [0, 1], hours: 9,  seed: 20, sell: 24, yield: 2 },
+  potato:    { name: "Картофель",  seasons: [0, 2], hours: 11, seed: 15, sell: 34, yield: 3 },
+  wheat:     { name: "Пшеница",    seasons: [1, 2], hours: 8,  seed: 10, sell: 18, yield: 3 },
+  sunflower: { name: "Подсолнух",  seasons: [1],    hours: 15, seed: 40, sell: 52, yield: 1 },
+  pumpkin:   { name: "Тыква",      seasons: [2],    hours: 22, seed: 60, sell: 85, yield: 1 },
 };
 
 export const ITEMS = {
   coin: { name: "Монеты" },
-  radish: { name: "Редис", atlas: ["items", "radish"], sell: 16 },
+  radish: { name: "Редис", atlas: ["items", "radish"], sell: 25 },
   carrot: { name: "Морковь", atlas: ["items", "carrot"], sell: 24 },
   potato: { name: "Картофель", atlas: ["items", "potato"], sell: 34 },
   wheat: { name: "Пшеница", atlas: ["items", "wheat"], sell: 18 },
@@ -48,33 +48,33 @@ export const FISH = [
 
 export const ANIMALS = {
   chicken: { name: "Курица", build: "coop", product: "egg", every: 1, price: 120, atlas: ["builds", "chicken"] },
-  cow:     { name: "Корова", build: "cowshed", product: "milk", every: 1, price: 400, atlas: ["builds", "cow"] },
-  sheep:   { name: "Овца",   build: "sheepfold", product: "wool", every: 3, price: 250, atlas: ["builds", "sheep"] },
+  cow:     { name: "Корова", build: "cowshed", product: "milk", every: 1, price: 500, atlas: ["builds", "cow"] },
+  sheep:   { name: "Овца",   build: "sheepfold", product: "wool", every: 3, price: 350, atlas: ["builds", "sheep"] },
 };
 
 export const BUILDINGS = {
-  coop:       { name: "Курятник",  price: 250, hours: 10, desc: "Куры несут яйца каждый день" },
-  cowshed:    { name: "Коровник",  price: 500, hours: 16, desc: "Корова даёт молоко каждый день" },
-  sheepfold:  { name: "Овчарня",   price: 400, hours: 14, desc: "Овца даёт шерсть раз в 3 дня" },
-  barn:       { name: "Амбар",     price: 300, hours: 12, desc: "Больше места на складе (+12 слотов)" },
-  well:       { name: "Колодец",   price: 200, hours: 8,  desc: "Полив без похода к реке (+4 воды)" },
-  mill:       { name: "Мельница",  price: 450, hours: 18, desc: "Пшеница → мука, мука + яйцо → пирожки" },
-  greenhouse: { name: "Теплица",   price: 600, hours: 20, desc: "3 грядки, работающие зимой" },
+  coop:       { name: "Курятник",  price: 300, hours: 10, desc: "Дом для 4 кур" },
+  cowshed:    { name: "Коровник",  price: 900, hours: 16, desc: "Дом для 2 коров" },
+  sheepfold:  { name: "Овчарня",   price: 700, hours: 14, desc: "Дом для 3 овец" },
+  barn:       { name: "Амбар",     price: 600, hours: 12, desc: "Рюкзак вмещает больше (+12 слотов)" },
+  well:       { name: "Колодец",   price: 250, hours: 8,  desc: "Вода прямо у дома (+4 воды)" },
+  mill:       { name: "Мельница",  price: 1200, hours: 18, desc: "Зерно в муку, мука + яйцо → пирожки" },
+  greenhouse: { name: "Теплица",   price: 1500, hours: 20, desc: "3 грядки, работающие зимой" },
 };
 
 export const DECOR = {
-  fence:     { name: "Забор",    price: 15, hours: 1 },
-  flowerbed: { name: "Клумба",   price: 25, hours: 1 },
-  scarecrow: { name: "Пугало",   price: 40, hours: 2 },
-  lantern:   { name: "Фонарь",   price: 50, hours: 2 },
-  bench:     { name: "Скамейка", price: 45, hours: 2 },
-  birch:     { name: "Берёзка",  price: 60, hours: 2 },
+  fence:     { name: "Забор",    price: 20, hours: 1 },
+  flowerbed: { name: "Клумба",   price: 40, hours: 1 },
+  scarecrow: { name: "Пугало",   price: 60, hours: 2 },
+  lantern:   { name: "Фонарь",   price: 80, hours: 2 },
+  bench:     { name: "Скамейка", price: 70, hours: 2 },
+  birch:     { name: "Берёзка",  price: 50, hours: 2 },
 };
 
 export const WORKERS = {
   senya:     { name: "Сеня-тракторист", price: 0,   desc: "Помогает сразу, за угощение" },
-  petrovich: { name: "Петрович",        price: 200, desc: "Опытный строитель" },
-  gosha:     { name: "Гоша",            price: 350, desc: "Быстро ставит постройки" },
+  petrovich: { name: "Петрович",        price: 400, desc: "Ищет работу" },
+  gosha:     { name: "Гоша",            price: 800, desc: "Ищет работу" },
 };
 
 export const NEIGHBORS = {

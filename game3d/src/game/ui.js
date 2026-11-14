@@ -76,6 +76,7 @@ export function buildDom(mount) {
   waterSpan.textContent = "9/12";
   const clock = el("div", "pill clock", clusterR);
   clock.appendChild(svg("clock"));
+  const clockDay = el("span", "clock-day", clock);
   const clockTime = el("span", "clock-time", clock);
   const rainBtn = el("button", "pill-btn rain-btn", clusterR);
   rainBtn.appendChild(svg("rain", "ico-svg small"));
@@ -105,7 +106,7 @@ export function buildDom(mount) {
 
   return {
     root, surface, canvas, anchors, hud, clusterL, clusterR,
-    coins, coinSpan, water, waterSpan, clock, clockTime, rainBtn,
+    coins, coinSpan, water, waterSpan, clock, clockDay, clockTime, rainBtn,
     joyZone, joy, knob, controls, sideBtns, bagBtn, bagDot, diaryBtn, buildBtn,
     actionCol, seedChip, actionBtn, actionIco, actionLabel, toastZone,
     panelLayer: null,

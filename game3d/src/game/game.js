@@ -202,7 +202,11 @@ export function createGame({ mount, tweaks }) {
     for (const bed of state.beds) {
       const m = world.bedMesh(bed.greenhouse);
       m.position.set(bed.x, 0, bed.z);
-      if (bed.crop && bed.stage > 0) m.add(world.plantMesh(bed.crop, Math.min(3, bed.stage)));
+      if (bed.crop && bed.stage > 0) {
+        const crop = CROPS[bed.crop];
+        const vis = Math.min(3, Math.max(1, Math.ceil((bed.stage / crop.hours) * 3)));
+        m.add(world.plantMesh(bed.crop, vis));
+      }
       addLinked(m, { kind: "bed", ref: bed });
     }
 
@@ -501,6 +505,7 @@ export function createGame({ mount, tweaks }) {
   function refreshHud() {
     dom.coinSpan.textContent = String(state.coins);
     dom.waterSpan.textContent = `${state.water}/${waterMax()}`;
+    dom.clockDay.textContent = `${SEASONS[seasonOf(state)]} · День ${((state.day - 1) % SEASON_DAYS) + 1} ·`;
     dom.clockTime.textContent = clockOf(state);
     const canRain = state.buildings.some((b) => !b.done) || state.beds.some((b) => b.crop && !b.watered && !b.done);
     dom.rainBtn.style.display = canRain ? "" : "none";
@@ -582,7 +587,7 @@ export function createGame({ mount, tweaks }) {
             rowIco(row, id, 40);
             const main = el("div", "row-main", row);
             el("div", "", main).textContent = `Семена: ${crop.name}`;
-            el("div", "sub", main).textContent = `Сезон: ${crop.seasons.map((s) => SEASONS[s]).join(", ")} · рост ${crop.days} дн.`;
+            el("div", "sub", main).textContent = `Сезон: ${crop.seasons.map((s) => SEASONS[s]).join(", ")} · рост ${crop.hours} ч`;
             const btn = el("button", "buy-btn", row);
             btn.textContent = `${seedPrice(crop.seed)} 🪙`;
             btn.addEventListener("click", () => {
@@ -659,10 +664,41 @@ export function createGame({ mount, tweaks }) {
     });
   }
 
+  const DATIVE = { nyura: "Бабе Нюре", ashot: "Ашоту", senya: "Сене", vika: "Вике", fil: "Филу" };
+  const FRIEND_BONUS = {
+    nyura: "Семена в подарок",
+    ashot: "Скидка на семена 10%",
+    senya: "Стройка дешевле на 10%",
+    vika: "Животные быстрее",
+    fil: "Улучшение удочки",
+  };
+
+  function heartsEl(n) {
+    const wrap = el("span", "hearts pip-row");
+    for (let i = 0; i < 5; i++) {
+      const pip = el("span", "pip" + (i < n ? " on" : ""));
+      pip.appendChild(svg("heart", "pip-ico"));
+      wrap.appendChild(pip);
+    }
+    return wrap;
+  }
+
   function openOrders() {
     openPanel(dom, "panel-orders", (body, panel, h2) => {
       h2.textContent = "Заказы соседей";
       if (!state.orders.length) makeOrders();
+      const cap = el("div", "cap", body);
+      cap.textContent = "Друзья";
+      for (const id of Object.keys(NEIGHBORS)) {
+        const nb = NEIGHBORS[id];
+        const fr = el("div", "friend", body);
+        const fico = el("span", "friend-ico", fr);
+        fico.appendChild(portraitEl(id, 40));
+        const fmain = el("div", "row-main", fr);
+        el("b", "", fmain).textContent = nb.name;
+        el("small", "", fmain).textContent = "3 ♥: " + FRIEND_BONUS[id].toLowerCase();
+        fr.appendChild(heartsEl(state.friendship[id] || 0));
+      }
       for (const o of [...state.orders]) {
         const nb = NEIGHBORS[o.who];
         const row = el("div", "order", body);
@@ -671,6 +707,7 @@ export function createGame({ mount, tweaks }) {
         const main = el("div", "order-main", row);
         const top = el("div", "order-top", main);
         el("b", "", top).textContent = nb.name;
+        top.appendChild(heartsEl(state.friendship[o.who] || 0));
         el("span", "price", top).textContent = `+${o.reward} 🪙`;
         const needs = el("div", "needs", main);
         let can = true;
@@ -684,7 +721,7 @@ export function createGame({ mount, tweaks }) {
           need.append(`${inv(id)}/${n}`);
         }
         const btn = el("button", "buy-btn wide" + (can ? "" : " off"), row);
-        btn.textContent = "Отдать";
+        btn.textContent = `Отнести ${DATIVE[o.who] || nb.name}`;
         btn.addEventListener("click", () => {
           for (const entry of Object.entries(o.needs)) {
             if (inv(entry[0]) < entry[1]) { toast(dom, "Не хватает товаров", "warn"); return; }
@@ -787,7 +824,10 @@ export function createGame({ mount, tweaks }) {
         const name = el("span", "", row);
         name.textContent = NEIGHBORS[who].name;
         const hp = el("span", "hearts", row);
-        for (let i = 0; i < 5; i++) el("span", "pip" + (i < hearts ? " on" : ""), hp);
+        for (let i = 0; i < 5; i++) {
+          const pip = el("span", "pip" + (i < hearts ? " on" : ""), hp);
+          pip.appendChild(svg("heart", "pip-ico"));
+        }
       }
     });
   }
@@ -1194,16 +1234,6 @@ export function createGame({ mount, tweaks }) {
   function sleep() {
     const recap = [];
     for (const b of state.beds) {
-      if (!b.crop) continue;
-      if (b.watered) {
-        b.stage += GROWTH;
-        const crop = CROPS[b.crop];
-        if (b.stage >= crop.days) {
-          b.stage = crop.days;
-          b.done = true;
-        }
-        recap.push({ ico: b.crop, text: `${crop.name}: выросло` });
-      }
       b.watered = false;
     }
     for (const a of state.animals) {
@@ -1289,6 +1319,24 @@ export function createGame({ mount, tweaks }) {
 
   function advanceTime(dt) {
     state.minutes += (dt / DAY_LENGTH) * 1200;
+    let rebuilt = false;
+    for (const b of state.beds) {
+      if (!b.crop || b.done || !b.watered) continue;
+      const crop = CROPS[b.crop];
+      b.stage += (dt / DAY_LENGTH) * 20 * GROWTH;
+      const vis = Math.min(3, Math.max(1, Math.ceil((b.stage / crop.hours) * 3)));
+      if (b.vis !== vis) {
+        b.vis = vis;
+        rebuilt = true;
+      }
+      if (b.stage >= crop.hours) {
+        b.stage = crop.hours;
+        b.done = true;
+        recapAdd(b.crop, `${crop.name}: созрело`);
+        toast(dom, `${crop.name} созрел — можно собирать!`, "good");
+      }
+    }
+    if (rebuilt) rebuildWorldObjects();
     if (state.minutes >= 26 * 60) {
       toast(dom, "Уже 2:00 — пора спать!", "warn");
       sleep();
