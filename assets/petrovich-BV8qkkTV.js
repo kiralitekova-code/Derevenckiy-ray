@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`petrovich`,skin:15381642,hair:10132122,hairStyle:`short`,hat:`hardhat`,hatColor:15909403,beard:`moustache`,beardColor:11053224,shirt:4024990,pants:3095119,shoes:3811870,scale:.98})}export{t as default};

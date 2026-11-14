@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`vika`,skin:16175016,hair:15781210,hairStyle:`bob`,coat:16250868,shirt:4173428,pants:4173428,shoes:15790314,scale:.96})}export{t as default};

@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`nyura`,skin:15778976,hair:14277081,hairStyle:`short`,hat:`scarf`,hatColor:16184042,dress:8212392,shirt:8212392,pants:8212392,apron:!0,glasses:!0,shoes:3877408,scale:.9})}export{t as default};

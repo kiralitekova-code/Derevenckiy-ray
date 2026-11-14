@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`gosha`,skin:15976090,hair:8014374,hairStyle:`short`,hat:`cap`,hatColor:3111108,shirt:13124910,overalls:!0,pants:3820915,shoes:3811870,scale:1.05})}export{t as default};

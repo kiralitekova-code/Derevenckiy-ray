@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`senya`,skin:15777934,hair:8014374,hairStyle:`short`,hat:`capBack`,hatColor:13123630,shirt:14711338,pants:4869719,shoes:3811870})}export{t as default};

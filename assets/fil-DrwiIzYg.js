@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`fil`,skin:15316617,hair:11884074,hairStyle:`short`,hat:`cap`,hatColor:5212730,beard:`full`,shirt:6261822,pants:7036223,shoes:3811870,scale:1.04})}export{t as default};

@@ -1,0 +1,1 @@
+export{t as buildPerson}from"./_person-BYJiUC9Y.js";

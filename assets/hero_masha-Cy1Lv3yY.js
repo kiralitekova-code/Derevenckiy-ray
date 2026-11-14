@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`hero_masha`,skin:15976090,hair:10768426,hairStyle:`braid`,hat:`straw`,overalls:!0,pants:4026296,shirt:16513006,scale:.97})}export{t as default};

@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`ashot`,skin:14855552,hair:2300437,hairStyle:`curly`,beard:`moustache`,vest:5913638,shirt:15986662,pants:3879984,shoes:2825750,scale:1.02})}export{t as default};

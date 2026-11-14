@@ -1,0 +1,1 @@
+import{t as e}from"./_person-BYJiUC9Y.js";function t(){return e({name:`hero_max`,skin:15777934,hair:7029795,hairStyle:`short`,hat:`straw`,beard:`stubble`,beardColor:9068866,overalls:!0,pants:4026296,shirt:16183782})}export{t as default};
