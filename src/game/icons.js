@@ -62,6 +62,21 @@ function frameOf(key, name) {
 	return list.find((f) => f.name === name) || null;
 }
 
+// The original atlas frame coordinates are not present in this repository yet.
+// Keep inventory and build menus readable without fabricating sprite rectangles.
+const FALLBACK_GLYPHS = {
+	coin: "🪙", radish: "🌱", carrot: "🥕", potato: "🥔", wheat: "🌾",
+	sunflower: "🌻", pumpkin: "🎃", egg: "🥚", milk: "🥛", wool: "🧶",
+	flour: "🌾", hay: "🌿", crucian: "🐟", roach: "🐟", perch: "🐠",
+	bream: "🐟", pike: "🐟", catfish: "🐟", burbot: "🐟", goldfish: "🐠",
+	coop: "🐓", cowshed: "🐄", sheepfold: "🐑", barn: "🏚️", well: "🪣",
+	mill: "🌬️", greenhouse: "🌱", fence: "🪵", flowerbed: "🌼",
+	scarecrow: "🧑‍🌾", lantern: "🏮", bench: "🪑", birch: "🌳",
+	chicken: "🐓", cow: "🐄", sheep: "🐑", max: "🧑‍🌾", masha: "👩‍🌾",
+	nyura: "👵", ashot: "🧔", senya: "👨‍🌾", vika: "👩‍⚕️", fil: "🧔",
+	petrovich: "👷", gosha: "👷",
+};
+
 // A square box that contains the frame's art, uniformly scaled and centred.
 // All values are relative to the box, so CSS can size the box freely.
 export function atlasIcon(icon, cls = "atlas") {
@@ -69,7 +84,7 @@ export function atlasIcon(icon, cls = "atlas") {
 	const [key, name] = icon;
 	const f = frameOf(key, name);
 	const d = dims[key];
-	if (!f || !d) return `<span class="${cls}"></span>`;
+	if (!f || !d) return `<span class="${cls}" aria-hidden="true">${FALLBACK_GLYPHS[name] || "✦"}</span>`;
 	const c = f.content || f.source;
 	const m = Math.max(c.w, c.h);
 	const bw = d.w / m;
