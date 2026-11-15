@@ -22,7 +22,7 @@ export async function createStandaloneRuntime(assetsManifest, tweaksManifest) {
         get(key) {
           const asset = assetsManifest[key];
           if (!asset?.src) throw new Error(`Asset "${key}" is missing from assets.json`);
-          return asset.src;
+          return asset.src.startsWith("/") ? `${import.meta.env.BASE_URL}${asset.src.slice(1)}` : asset.src;
         },
       };
     },
