@@ -1,0 +1,267 @@
+{
+  "ITEM_ICONS": {
+    "src": "/generated-assets/item_icons-transparent.webp",
+    "kind": "image",
+    "label": "Урожай и продукты",
+    "recipe": {
+      "prompt": "Use case: object/icon atlas of farm item icons\nAsset use: inventory slots, shop rows and neighbour order bubbles in a cozy 3D farm game; shown at 32-56 px so silhouettes must read when small\nSubject: coin = shiny gold coin with a simple wheat-ear emboss; radish = round pink-red radish with green leaves; carrot = orange carrot with leafy green top; potato = two brown potatoes; wheat = bundle of golden wheat ears tied with string; sunflower = big yellow sunflower head with brown centre; pumpkin = fat orange pumpkin with a short stem; egg = one white-cream chicken egg; milk = glass milk bottle with white milk and blue cap; wool = fluffy cream ball of wool; flour = small burlap sack of flour with white dust on top; hay = small golden bale of hay tied with twine\nStyle: soft low-poly 3D-rendered icons, gentle faceted shading, warm golden palette matching the reference game, no outlines, slight soft highlight\nComposition: one centered object per cell, three-quarter view, consistent object size across cells, generous padding\nAvoid: text, numbers, shadows on the ground, backgrounds, duplicate objects, drop frames",
+      "refs": [
+        "https://cdn.playabl.ai/ai-reference-images/6af5b88ee2bf0eba64aabca8/af_1794489576508_7t46mtk.png"
+      ],
+      "playabl": {
+        "tool": "image_gen",
+        "kind": "atlas",
+        "parts": [
+          "coin",
+          "radish",
+          "carrot",
+          "potato",
+          "wheat",
+          "sunflower",
+          "pumpkin",
+          "egg",
+          "milk",
+          "wool",
+          "flour",
+          "hay"
+        ],
+        "removeBackground": true,
+        "assetId": "6af5c0a1792a9c81888c9801"
+      }
+    }
+  },
+  "FISH_ICONS": {
+    "src": "/generated-assets/fish_icons-transparent.webp",
+    "kind": "image",
+    "label": "Рыбы",
+    "recipe": {
+      "prompt": "Use case: object/icon atlas of freshwater fish icons\nAsset use: fishing catch popup, fish journal and inventory in a cozy 3D farm game; readable at 40 px\nSubject: crucian = round deep-bodied golden-bronze crucian carp; roach = slim silver fish with red fins and red eye; perch = green-gold fish with dark vertical stripes, spiky dorsal fin and orange fins; bream = flat tall silvery-bronze bream; pike = long olive-green pike with pale spots and long snout; catfish = big dark grey-brown catfish with long whiskers and wide mouth; burbot = mottled brown eel-like burbot with a single chin barbel; goldfish = bright shiny gold fish with flowing fancy tail and a tiny crown sparkle\nStyle: soft low-poly 3D-rendered icons, gentle faceted shading, warm palette matching the reference game, no outlines\nComposition: one fish per cell, side view facing left, consistent scale so all fish fill a similar width, generous padding\nAvoid: text, water, hooks, backgrounds, ground shadows",
+      "refs": [
+        "https://cdn.playabl.ai/ai-reference-images/6af5b88ee2bf0eba64aabca8/af_1794489576508_7t46mtk.png"
+      ],
+      "playabl": {
+        "tool": "image_gen",
+        "kind": "atlas",
+        "parts": [
+          "crucian",
+          "roach",
+          "perch",
+          "bream",
+          "pike",
+          "catfish",
+          "burbot",
+          "goldfish"
+        ],
+        "removeBackground": true,
+        "assetId": "6af5c0a6db710c3ae4ddde2f"
+      }
+    }
+  },
+  "BUILD_ICONS": {
+    "src": "/generated-assets/build_icons-transparent.webp",
+    "kind": "image",
+    "label": "Постройки, декор и животные",
+    "recipe": {
+      "prompt": "Use case: object/icon atlas for a build menu and animal shop\nAsset use: menu cards in a cozy low-poly 3D farm game, shown at 48-72 px\nSubject: coop = small wooden chicken coop with terracotta roof and ramp; cowshed = wide red wooden cow barn with white trim; sheepfold = low cream wooden shed with a fenced pen; barn = tall red gambrel-roof storage barn with big doors; well = round stone well with a little wooden roof and bucket; mill = wooden windmill with four sails; greenhouse = small glass greenhouse with white frame and green plants inside; fence = short section of split-rail wooden fence; flowerbed = round wooden-edged bed of pink, yellow and white flowers; scarecrow = scarecrow in straw hat and patched shirt on a pole; lantern = wooden post with a warm glowing lantern; bench = simple wooden garden bench; birch = small birch tree with white trunk and light green faceted crown; chicken = plump white hen with red comb; cow = brown and white cow; sheep = fluffy cream sheep with dark face\nStyle: soft flat-shaded low-poly 3D, no outlines, warm golden spring palette matching the reference\nComposition: one centered object per cell, three-quarter view from slightly above, consistent framing, generous padding\nAvoid: text, ground planes, backgrounds, people",
+      "refs": [
+        "https://cdn.playabl.ai/ai-reference-images/6af5b88ee2bf0eba64aabca8/af_1794489576508_7t46mtk.png"
+      ],
+      "playabl": {
+        "tool": "image_gen",
+        "kind": "atlas",
+        "parts": [
+          "coop",
+          "cowshed",
+          "sheepfold",
+          "barn",
+          "well",
+          "mill",
+          "greenhouse",
+          "fence",
+          "flowerbed",
+          "scarecrow",
+          "lantern",
+          "bench",
+          "birch",
+          "chicken",
+          "cow",
+          "sheep"
+        ],
+        "removeBackground": true,
+        "assetId": "6af5c0aedb710c3ae4ddde7b"
+      }
+    }
+  },
+  "PORTRAITS": {
+    "src": "/generated-assets/portraits-transparent.webp",
+    "kind": "image",
+    "label": "Портреты жителей",
+    "recipe": {
+      "prompt": "Use case: character bust portrait atlas\nAsset use: order cards, worker hiring cards and hero choice in a cozy Russian village farm game; faces must read at 48 px\nSubject: max = young man of 25 with short brown hair, light stubble, straw hat, blue overalls over white t-shirt, friendly tired smile; masha = young woman of 25 with long auburn braid, straw hat, blue overalls over a white shirt, bright smile; nyura = kind old village grandmother with white headscarf, round glasses, purple dress and apron; ashot = cheerful middle-aged shopkeeper with black curly hair, thick moustache, vest over a white shirt; senya = jolly young tractor driver with freckles, red cap worn backwards, grease smudge on cheek, orange work jacket; vika = young woman veterinarian with short blonde bob, white vet coat with a green stethoscope; fil = bearded forest ranger with a green cap, khaki jacket, ginger beard; petrovich = stocky grey-moustached older builder in a yellow hard hat and denim jacket; gosha = lanky young builder with a blue cap and a pencil behind the ear, plaid shirt\nStyle: soft low-poly 3D toy-like characters with rounded simple faces, gentle faceted shading, warm palette matching the reference, no outlines\nComposition: bust framing, facing the viewer, consistent head size and shoulder line across cells, centered\nAvoid: text, backgrounds, hands covering faces, identical faces",
+      "refs": [
+        "https://cdn.playabl.ai/ai-reference-images/6af5b88ee2bf0eba64aabca8/af_1794489576508_7t46mtk.png"
+      ],
+      "playabl": {
+        "tool": "image_gen",
+        "kind": "atlas",
+        "parts": [
+          "max",
+          "masha",
+          "nyura",
+          "ashot",
+          "senya",
+          "vika",
+          "fil",
+          "petrovich",
+          "gosha"
+        ],
+        "removeBackground": true,
+        "assetId": "6af5c0b6209ddc14b7e3d511"
+      }
+    }
+  },
+  "HERO_MAX_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/3a2b47f3-6dfd-4cdb-a620-5218da58fb2c.glb",
+    "kind": "model",
+    "label": "Максим",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/hero_max.js",
+        "assetId": "6af5c1646a4c48ef386ae6d6"
+      }
+    }
+  },
+  "HERO_MASHA_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/adabe132-65d4-4c84-a33c-9cfd0e86e6ba.glb",
+    "kind": "model",
+    "label": "Маша",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/hero_masha.js",
+        "assetId": "6af5c165209ddc14b7e3db01"
+      }
+    }
+  },
+  "NYURA_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/31b895f3-e9db-43f8-93cb-550db2a4be0e.glb",
+    "kind": "model",
+    "label": "Баба Нюра",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/nyura.js",
+        "assetId": "6af5c165e800e33ae0853455"
+      }
+    }
+  },
+  "ASHOT_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/b3503284-c8cd-4046-aaba-7656aeb3a48a.glb",
+    "kind": "model",
+    "label": "Ашот",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/ashot.js",
+        "assetId": "6af5c166e2bf0eba64aaf7ce"
+      }
+    }
+  },
+  "SENYA_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/5942db99-614e-4cf5-ab85-399d44ea4974.glb",
+    "kind": "model",
+    "label": "Сеня",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/senya.js",
+        "assetId": "6af5c167209ddc14b7e3db13"
+      }
+    }
+  },
+  "VIKA_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/57dbf121-4e9d-4651-b484-27db4a07e285.glb",
+    "kind": "model",
+    "label": "Вика",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/vika.js",
+        "assetId": "6af5c168792a9c81888c9f38"
+      }
+    }
+  },
+  "FIL_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/baf36986-2789-4923-9ea9-4e71e6c19cdc.glb",
+    "kind": "model",
+    "label": "Лесник Фил",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/fil.js",
+        "assetId": "6af5c1696a4c48ef386ae6f6"
+      }
+    }
+  },
+  "PETROVICH_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/ee13af46-173f-4c75-8c24-ac2392d84b6e.glb",
+    "kind": "model",
+    "label": "Петрович",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/petrovich.js",
+        "assetId": "6af5c16adb710c3ae4dde52c"
+      }
+    }
+  },
+  "GOSHA_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/29ec72d8-7e61-476f-b45e-e73ace51b181.glb",
+    "kind": "model",
+    "label": "Гоша",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/gosha.js",
+        "assetId": "6af5c16a209ddc14b7e3db2f"
+      }
+    }
+  },
+  "CHICKEN_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/34915197-7f00-42f0-8fd5-046066012dd7.glb",
+    "kind": "model",
+    "label": "Курица",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/chicken.js",
+        "assetId": "6af5c16b209ddc14b7e3db37"
+      }
+    }
+  },
+  "COW_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/23f45aa3-de1f-42db-9683-471693508c23.glb",
+    "kind": "model",
+    "label": "Корова",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/cow.js",
+        "assetId": "6af5c16c792a9c81888c9f53"
+      }
+    }
+  },
+  "SHEEP_MODEL": {
+    "src": "https://cdn.playabl.ai/ai-models/6af5b88ee2bf0eba64aabca8/2542c076-3fd6-41cb-b643-8d0148d7b40a.glb",
+    "kind": "model",
+    "label": "Овца",
+    "recipe": {
+      "playabl": {
+        "tool": "model_export",
+        "module": "src/models/sheep.js",
+        "assetId": "6af5c16d6a4c48ef386ae713"
+      }
+    }
+  }
+}

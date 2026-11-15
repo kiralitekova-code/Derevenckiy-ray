@@ -1,0 +1,121 @@
+{
+  "dayLength": {
+    "type": "number",
+    "value": 240,
+    "min": 60,
+    "max": 900,
+    "step": 10,
+    "name": "Длина дня (сек)",
+    "description": "Сколько реальных секунд длится игровой день с 6:00 до 2:00.",
+    "group": "def:time",
+    "index": 1
+  },
+  "seasonDays": {
+    "type": "number",
+    "value": 7,
+    "min": 2,
+    "max": 28,
+    "step": 1,
+    "name": "Дней в сезоне",
+    "description": "Через сколько дней весна сменяется летом, лето осенью и так далее.",
+    "group": "def:time",
+    "index": 2
+  },
+  "growthSpeed": {
+    "type": "number",
+    "value": 1,
+    "min": 0.25,
+    "max": 4,
+    "step": 0.25,
+    "name": "Скорость роста",
+    "description": "Множитель роста всех культур. Выше — урожай созревает быстрее.",
+    "group": "def:plot",
+    "index": 1
+  },
+  "buildSpeed": {
+    "type": "number",
+    "value": 1,
+    "min": 0.25,
+    "max": 4,
+    "step": 0.25,
+    "name": "Скорость стройки",
+    "description": "Как быстро рабочие возводят постройки.",
+    "group": "def:building",
+    "index": 1
+  },
+  "walkSpeed": {
+    "type": "number",
+    "value": 4.5,
+    "min": 2,
+    "max": 8,
+    "step": 0.5,
+    "name": "Скорость ходьбы",
+    "description": "Метров в секунду, которые проходит герой.",
+    "group": "def:player",
+    "index": 1
+  },
+  "cameraZoom": {
+    "type": "number",
+    "value": 1,
+    "min": 0.7,
+    "max": 1.5,
+    "step": 0.05,
+    "name": "Приближение камеры",
+    "description": "Выше — камера ближе к герою, ниже — видно больше фермы.",
+    "group": "def:camera",
+    "index": 1
+  },
+  "startCoins": {
+    "type": "number",
+    "value": 150,
+    "min": 0,
+    "max": 5000,
+    "step": 50,
+    "name": "Стартовые монеты",
+    "description": "С какой суммой начинается новая ферма.",
+    "group": "def:hud-coins",
+    "index": 1,
+    "appliesOn": "restart"
+  },
+  "fishZone": {
+    "type": "number",
+    "value": 1,
+    "min": 0.5,
+    "max": 2,
+    "step": 0.1,
+    "name": "Ширина зоны поклёвки",
+    "description": "Насколько широка зелёная зона на шкале рыбалки. Выше — проще поймать.",
+    "group": "def:fishing",
+    "index": 1
+  },
+  "musicVolume": {
+    "type": "number",
+    "value": 0.35,
+    "min": 0,
+    "max": 1,
+    "step": 0.05,
+    "name": "Громкость музыки",
+    "description": "Громкость фоновой мелодии.",
+    "group": "sound",
+    "index": 1
+  },
+  "sfxVolume": {
+    "type": "number",
+    "value": 0.8,
+    "min": 0,
+    "max": 1,
+    "step": 0.05,
+    "name": "Громкость звуков",
+    "description": "Громкость звуков полива, урожая, животных и стройки.",
+    "group": "sound",
+    "index": 2
+  },
+  "shadows": {
+    "type": "boolean",
+    "value": true,
+    "name": "Тени",
+    "description": "Включает мягкие тени от солнца. Выключи на слабом телефоне.",
+    "group": "quick",
+    "index": 1
+  }
+}
